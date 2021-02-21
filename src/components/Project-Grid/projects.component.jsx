@@ -7,6 +7,7 @@ class ProjectGrid extends Component {
 
     constructor(props) {
         super(props);
+
       }
 
       componentDidMount()
@@ -14,11 +15,21 @@ class ProjectGrid extends Component {
         this.props.fetchProjects(this.props.token);
       }
 
+
       render()
-      {
-       
+      {     
         return(
-          <div>{this.props.projectsData}</div>
+          <div>
+          <h1> Projects Detailes:</h1>
+                <div>
+                  <h4>ID:</h4>
+                  <h5>{this.props.projectsData.length? this.props.projectsData[0].id:null}</h5> 
+                  <h4>Name:</h4>
+                  <h5>{this.props.projectsData.length? this.props.projectsData[0].name:null}</h5> 
+                  <h4>Score:</h4>
+                  <h5>{this.props.projectsData.length? this.props.projectsData[0].score:null}</h5>       
+                </div>
+            </div>
         );
 
       }
