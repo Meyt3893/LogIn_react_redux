@@ -18,9 +18,10 @@ function App() {
   );
 }
 
-const mapStateToProps = state => 
-({ 
-  userData: state.reducer.userData
-})
 
+const mapStateToProps = (state) => {
+  return {
+    userData: state.reducer.userData
+  };
+}
 export default connect(mapStateToProps)(App);

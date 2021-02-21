@@ -67,7 +67,7 @@ export function fetchProjects(token) {
 
     })
     .catch(error => {
-        dispatch(setLoginError(error));
+        dispatch(fetchProjectsError(error));
     })
   }
 }
@@ -80,11 +80,13 @@ function fetchProjectsPending(isFetchPending) {
   };
 }
 
+
+
 function fetchProjectsSuccess(response,isFetchSuccess) {
   return {
     type: userConstants.FETCH_PROJS_SUCCESS,
-    response,
-    isFetchSuccess
+    isFetchSuccess,
+    response      
   };
 }
 
